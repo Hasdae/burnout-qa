@@ -29,15 +29,17 @@ export type CargaHorarioSemanal =
   | '21-40-horas'
   | 'mais-40-horas';
 
+  export type instituicaoEnsino = 'privada' | 'publica'
+
 export interface QuestionarioSociodemografico {
   idade: number;
   genero: Genero;
-  instituicaoEnsino: string;
+  instituicaoEnsino: instituicaoEnsino;
   tempoAtuacaoEnsinoSuperior: TempoDeAtuacao;
   cargaHorarioSemanal: CargaHorarioSemanal;
   estadoCivil: EstadoCivil;
   grauEscolaridade: GrauEscolaridade;
-  dataPreenchimento: Date;
+  dataPreenchimento?: Date;
 }
 
 // ========== QUESTIONÁRIO DE AVALIAÇÃO ==========
@@ -56,16 +58,18 @@ export interface RespostaAvaliacao {
 }
 
 export interface QuestionarioAvaliacao {
-  id: string;
+  id?: string;
   respostas: RespostaAvaliacao[];
-  dataPreenchimento: Date;
+  dataPreenchimento?: Date;
 }
 
 // ========== TIPOS PARA API ==========
 
 export interface QuestionarioCompleto {
+  participanteId: string;
   sociodemografico: QuestionarioSociodemografico;
   avaliacao: QuestionarioAvaliacao;
+  dataFinalizacao: Date;
 }
 
 // ========== VALIDAÇÃO E FORMULÁRIOS ==========
