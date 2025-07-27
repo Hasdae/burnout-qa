@@ -4,8 +4,6 @@ import { EscalaAvaliacao } from '../types';
 import { burnoutQuestions } from '../data/questions';
 import './AvaliacaoForm.css';
 
-// Perguntas do Maslach Burnout Inventory adaptado para educadores
-
 const opcoes = [
   { valor: 0, label: 'Nunca', desc: '' },
   { valor: 1, label: 'Raramente', desc: '(Algumas vezes por ano)' },
