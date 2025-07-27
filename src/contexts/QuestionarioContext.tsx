@@ -71,7 +71,6 @@ function questionarioReducer(state: QuestionarioState, action: QuestionarioActio
         ...state,
         sociodemografico: {
           ...state.sociodemografico,
-          dataPreenchimento: new Date()
         },
         sessao: {
           ...state.sessao,
@@ -175,7 +174,6 @@ export function QuestionarioProvider({ children }: QuestionarioProviderProps) {
     if (etapa === 'avaliacao') {
       const { avaliacao } = state;
       return !!(
-        avaliacao.id &&
         avaliacao.respostas &&
         avaliacao.respostas.length >= burnoutQuestions.length
       );
@@ -190,10 +188,8 @@ export function QuestionarioProvider({ children }: QuestionarioProviderProps) {
     }
 
     return {
-      participanteId: `participant_${Date.now()}`,
       sociodemografico: state.sociodemografico as QuestionarioSociodemografico,
       avaliacao: state.avaliacao as QuestionarioAvaliacao,
-      dataFinalizacao: new Date()
     };
   };
 

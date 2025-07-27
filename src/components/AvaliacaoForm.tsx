@@ -24,7 +24,6 @@ const AvaliacaoForm: React.FC = () => {
     dispatch({
       type: 'ATUALIZAR_AVALIACAO',
       payload: {
-        id: avaliacao.id || `avaliacao_${Date.now()}`,
         respostas: respostasAtualizadas
       }
     });

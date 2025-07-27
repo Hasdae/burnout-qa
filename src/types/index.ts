@@ -39,7 +39,6 @@ export interface QuestionarioSociodemografico {
   cargaHorarioSemanal: CargaHorarioSemanal;
   estadoCivil: EstadoCivil;
   grauEscolaridade: GrauEscolaridade;
-  dataPreenchimento?: Date;
 }
 
 // ========== QUESTIONÁRIO DE AVALIAÇÃO ==========
@@ -58,7 +57,6 @@ export interface RespostaAvaliacao {
 }
 
 export interface QuestionarioAvaliacao {
-  id?: string;
   respostas: RespostaAvaliacao[];
   dataPreenchimento?: Date;
 }
@@ -66,10 +64,8 @@ export interface QuestionarioAvaliacao {
 // ========== TIPOS PARA API ==========
 
 export interface QuestionarioCompleto {
-  participanteId: string;
   sociodemografico: QuestionarioSociodemografico;
   avaliacao: QuestionarioAvaliacao;
-  dataFinalizacao: Date;
 }
 
 // ========== VALIDAÇÃO E FORMULÁRIOS ==========
