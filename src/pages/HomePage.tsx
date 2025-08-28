@@ -68,9 +68,9 @@ const HomePage: React.FC = () => {
               <div className="info-card">
                 <h3>🔍 Nossa Pesquisa</h3>
                 <p>
-                  Este questionário utiliza o Maslach Burnout Inventory (MBI) adaptado para 
-                  profissionais da educação, considerado o instrumento mais confiável para 
-                  avaliação da síndrome.
+                  Este questionário utiliza o CESQT (Cuestionario para la Evaluación del Síndrome 
+                  de Quemarse por el Trabajo), um instrumento científico validado especificamente 
+                  para avaliação da síndrome de burnout em profissionais.
                 </p>
               </div>
             </div>
@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
               <p>
                 Você responderá a dois questionários: um sobre dados sociodemográficos 
                 (idade, formação, etc.) e outro sobre sintomas relacionados ao trabalho 
-                (Maslach Burnout Inventory).
+                (CESQT - Cuestionario para la Evaluación del Síndrome de Quemarse por el Trabalho).
               </p>
 
               <h3>Riscos e Benefícios</h3>
