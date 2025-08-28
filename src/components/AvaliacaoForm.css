@@ -199,7 +199,7 @@
   font-size: 1.1rem;
 }
 
-@media (max-width: 768px) {
+
   .pergunta-item {
     padding: 1.5rem;
   }
@@ -210,10 +210,6 @@
     gap: 0.5rem;
   }
   
-  .escala-opcoes {
-    flex-direction: column;
-    align-items: center;
-  }
   
   .opcoes-resposta {
     flex-direction: column;
@@ -225,4 +221,4 @@
     min-width: auto;
     width: 100%;
   }
-}
+
