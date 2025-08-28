@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuestionario } from '../contexts/QuestionarioContext';
+import { QuestionarioService } from '../services/QuestionarioService';
+import { converterParaApiFormat } from '../types';
 import SociodemograficoForm from '../components/SociodemograficoForm';
 import AvaliacaoForm from '../components/AvaliacaoForm';
 import './QuestionarioPage.css';
@@ -8,6 +10,7 @@ import './QuestionarioPage.css';
 const QuestionarioPage: React.FC = () => {
   const { state, dispatch, isEtapaCompleta, getQuestionarioCompleto } = useQuestionario();
   const [canSubmit, setCanSubmit] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate();  
   
   useEffect(() => {
@@ -39,15 +42,30 @@ const QuestionarioPage: React.FC = () => {
     }
   };
 
-  const handleEnviarQuestionario = () => {
+  const handleEnviarQuestionario = async () => {
     const questionarioCompleto = getQuestionarioCompleto();
     
-    if (questionarioCompleto) {
-      console.log('Estrutura do JSON a ser enviado:', questionarioCompleto);
-        // Simula envio
-      dispatch({ type: 'FINALIZAR_QUESTIONARIO' });
-    } else {
+    if (!questionarioCompleto) {
       alert('Por favor, complete todas as etapas antes de enviar.');
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Converter para o formato da API
+      const questionarioApi = converterParaApiFormat(questionarioCompleto);
+
+      // Enviar para a API
+      await QuestionarioService.enviarQuestionario(questionarioApi);
+      
+      dispatch({ type: 'FINALIZAR_QUESTIONARIO' });
+  
+    } catch (error) {
+      console.error('Erro ao enviar questionário:', error);
+      alert('Erro ao enviar questionário. Tente novamente.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -97,7 +115,7 @@ const QuestionarioPage: React.FC = () => {
             <div className="etapa-container">
               <h2>Dados Sociodemográficos</h2>
               <p className="etapa-description">
-                Por favor, preencha seus dados pessoais. Todas as informações são confidenciais e anônimas.
+                Por favor, preencha os dados abaixo. Todas as informações são confidenciais e anônimas.
               </p>
               <SociodemograficoForm />
               
@@ -116,7 +134,7 @@ const QuestionarioPage: React.FC = () => {
 
           {state.sessao.etapaAtual === 'avaliacao' && (
             <div className="etapa-container">
-              <h2>Inventário de Burnout de Maslach</h2>
+              <h2>Avaliação CESQT</h2>
               <p className="etapa-description">
                 As afirmações a seguir referem-se aos sentimentos relacionados ao seu trabalho. 
                 Indique a frequência com que você tem cada sentimento.
@@ -133,10 +151,11 @@ const QuestionarioPage: React.FC = () => {
                 
                 {canSubmit && (
                   <button 
-                    className="button-success"
+                    className={`button-success ${isSubmitting ? 'loading' : ''}`}
                     onClick={handleEnviarQuestionario}
+                    disabled={isSubmitting}
                   >
-                    Enviar Questionário
+                    {isSubmitting ? 'Enviando...' : 'Enviar Questionário'}
                   </button>
                 )}
               </div>
