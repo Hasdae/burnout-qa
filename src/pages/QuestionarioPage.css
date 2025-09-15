@@ -170,6 +170,180 @@
   box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
 }
 
+/* Estilos para a etapa de finalização */
+.finalizacao-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.agradecimento {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.agradecimento h2 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.agradecimento-texto {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.apoio-emocional {
+  margin-bottom: 30px;
+}
+
+.apoio-emocional h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.4em;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 8px;
+}
+
+.apoio-intro {
+  margin-bottom: 25px;
+  font-size: 1.05em;
+  color: #555;
+  line-height: 1.6;
+}
+
+.servicos-apoio {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.servico-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 5px solid #3498db;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.servico-card.emergencia {
+  border-left-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.servico-card.institucional {
+  border-left-color: #f39c12;
+  background: #fffcf5;
+}
+
+.servico-card h4 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.servico-item {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.servico-item:last-child {
+  margin-bottom: 0;
+}
+
+.servico-item strong {
+  display: block;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 1.05em;
+}
+
+.servico-item p {
+  margin: 5px 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.contato {
+  font-weight: 500;
+  color: #3498db !important;
+}
+
+.contato a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contato a:hover {
+  text-decoration: underline;
+}
+
+.servicos-lista {
+  display: grid;
+  gap: 15px;
+}
+
+.mensagem-cuidado {
+  background: #e8f5e8;
+  border: 1px solid #28a745;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.mensagem-cuidado p {
+  margin: 0;
+  color: #155724;
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+.contato-pesquisador {
+  background: #f0f8ff;
+  border: 1px solid #3498db;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.contato-pesquisador h4 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.contato-pesquisador p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.voltar-inicio {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.voltar-inicio .button-primary {
+  padding: 12px 30px;
+  font-size: 1.1em;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .questionario-header h1 {
     font-size: 2rem;
@@ -196,5 +370,25 @@
   .etapa-navigation {
     flex-direction: column;
     align-items: center;
+  }
+  
+  .finalizacao-content {
+    padding: 0 15px;
+  }
+  
+  .agradecimento {
+    padding: 20px;
+  }
+  
+  .agradecimento h2 {
+    font-size: 1.5em;
+  }
+  
+  .servico-card {
+    padding: 15px;
+  }
+  
+  .apoio-emocional h3 {
+    font-size: 1.2em;
   }
 }

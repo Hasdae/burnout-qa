@@ -164,8 +164,88 @@ const QuestionarioPage: React.FC = () => {
 
           {state.sessao.etapaAtual === 'finalizado' && (
             <div className="etapa-container">
-              <h2>Questionário Finalizado</h2>
-              <p>Obrigado pela sua participação!</p>
+              <div className="finalizacao-content">
+                <div className="agradecimento">
+                  <h2>✅ Questionário Finalizado com Sucesso!</h2>
+                  <p className="agradecimento-texto">
+                    Muito obrigado pela sua valiosa participação em nossa pesquisa. 
+                    Sua contribuição é fundamental para o avanço dos estudos sobre 
+                    burnout em professores do ensino superior.
+                  </p>
+                </div>
+
+                <div className="apoio-emocional">
+                  <h3>🤝 Serviços de Apoio Emocional e Psicológico</h3>
+                  <p className="apoio-intro">
+                    Como medida adicional de proteção e cuidado, disponibilizamos 
+                    uma lista de serviços de apoio emocional caso você deseje buscar 
+                    suporte especializado:
+                  </p>
+
+                  <div className="servicos-apoio">
+                    <div className="servico-card emergencia">
+                      <h4>🆘 Apoio Imediato</h4>
+                      <div className="servico-item">
+                        <strong>Centro de Valorização da Vida (CVV)</strong>
+                        <p>Apoio emocional e prevenção do suicídio - 24h gratuito</p>
+                        <p className="contato">📞 <strong>188</strong> (ligação gratuita)</p>
+                        <p className="contato">💬 Chat: <a href="https://www.cvv.org.br" target="_blank" rel="noopener noreferrer">www.cvv.org.br</a></p>
+                      </div>
+                    </div>
+
+                    <div className="servico-card institucional">
+                      <h4>🏥 Serviços Institucionais Gratuitos</h4>
+                      <div className="servico-item">
+                        <strong>Clínica de Psicologia - UNAERP</strong>
+                        <p>Atendimento psicológico gratuito</p>
+                        <p className="contato">📍 Av. Costabile Romano, 2201 - Ribeirão Preto/SP</p>
+                        <p className="contato">📞 (16) 3603-7000</p>
+                      </div>
+                    </div>
+
+                    <div className="servico-card">
+                      <h4>🌐 Outros Serviços de Apoio</h4>
+                      <div className="servicos-lista">
+                        <div className="servico-item">
+                          <strong>CAPS (Centro de Atenção Psicossocial)</strong>
+                          <p>Procure o CAPS mais próximo da sua região</p>
+                          <p className="contato">📞 136 (Disque Saúde)</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mensagem-cuidado">
+                    <p>
+                      <strong>Lembre-se:</strong> Buscar ajuda profissional é um ato de coragem 
+                      e autocuidado. Se você está passando por dificuldades emocionais, 
+                      não hesite em procurar apoio especializado.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="contato-pesquisador">
+                  <h4>📧 Dúvidas sobre a Pesquisa</h4>
+                  <p>
+                    Para questões relacionadas à pesquisa, entre em contato com o 
+                    pesquisador responsável:
+                  </p>
+                  <p><strong>Jonathan Allan Santos de Araújo Mello</strong></p>
+                  <p>📧 jmello@unaerp.br | 📞 (13) 97423-4486</p>
+                </div>
+
+                <div className="voltar-inicio">
+                  <button 
+                    className="button-primary"
+                    onClick={() => {
+                      dispatch({ type: 'INICIAR_NOVA_PESQUISA' });
+                      navigate('/', { replace: true });
+                    }}
+                  >
+                    Voltar ao Início
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </main>
