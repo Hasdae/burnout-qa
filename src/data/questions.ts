@@ -9,7 +9,7 @@ export const burnoutQuestions =
   { id: 'cesqt_7', texto: 'Penso que trato com indiferença alguns alunos.'},
   { id: 'cesqt_8', texto: 'Penso que estou saturado(a) pelo meu trabalho.'},
   { id: 'cesqt_9', texto: 'Sinto-me culpado(a) por alguma das minhas atitudes no trabalho.'},
-  { id: 'cesqt_10', texto: 'Penso que o meu trabalho me dá coisas positivass.'},
+  { id: 'cesqt_10', texto: 'Penso que o meu trabalho me dá coisas positivas.'},
   { id: 'cesqt_11', texto: 'Gosto de ser irônico(a) com alguns alunos.'},
   { id: 'cesqt_12', texto: 'Sinto-me pressionado(a) pelo trabalho.'},
   { id: 'cesqt_13', texto: 'Tenho remorsos por alguns dos meus comportamentos no trabalho.'},
